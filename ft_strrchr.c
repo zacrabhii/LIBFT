@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zrabhi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 13:15:27 by zrabhi            #+#    #+#             */
-/*   Updated: 2021/11/11 13:56:24 by zrabhi           ###   ########.fr       */
+/*   Created: 2021/11/03 10:17:50 by zrabhi            #+#    #+#             */
+/*   Updated: 2021/11/07 18:15:36 by zrabhi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "libft.h"
+int 	ft_strlen(char *str)
+{
+	int i;
+	
+	i= 0;
+	while(str[i])
+		i++;
+	return(i);
+}
+char 	*ft_strrchr(const char *s, int c)
+{
+	if( c == '\0')
+		return(NULL);
+	int len;
+
+	len = 0;
+	len= ft_strlen(((char *)s));
+
+   	while(s[--len]) 
+		{
+			if(s[len] == c)	
+				return(((char *)s + len));
+		}
+	return (0);
+}
 int main()
 {
-	//printf("%s", ft_calloc(0, 0));
-	//printf("\n-------------------------\n");
-	//printf("%s", calloc(1, 0));	
-	//printf("%s", ft_st:wq!rtrim("000helloworld00", "000"));
- 	//int i =123456;	
-	//ft_putnbr_fd(i, 1);
-	//i
-	printf("%s", ft_strtrim(".00#", "0.#/"));
+printf("first string : %s", ft_strrchr("www.1337.ma", '\0'));
+printf("\nsecond string : %s\n", strrchr("ww.1337.ma", '\0'));
 }
+
+

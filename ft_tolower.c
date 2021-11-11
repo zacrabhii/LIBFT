@@ -6,18 +6,18 @@
 /*   By: zrabhi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 18:40:34 by zrabhi            #+#    #+#             */
-/*   Updated: 2021/11/02 18:44:38 by zrabhi           ###   ########.fr       */
+/*   Updated: 2021/11/07 16:15:28 by zrabhi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 int 	ft_tolower(int ch)
 {
-	if(ch >= 65 || ch <= 90)
+	if(ch >= 65 && ch <= 90)
 		ch += 32;
 	return (ch);
 }
 int main()
 {
-	printf("%c", ft_tolower('a'));
+	printf("%c", ft_tolower('6'));
 }

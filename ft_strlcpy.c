@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zrabhi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 13:15:27 by zrabhi            #+#    #+#             */
-/*   Updated: 2021/11/11 13:56:24 by zrabhi           ###   ########.fr       */
+/*   Created: 2021/11/07 17:02:02 by zrabhi            #+#    #+#             */
+/*   Updated: 2021/11/11 15:38:04 by zrabhi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "libft.h"
-int main()
+isize_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	//printf("%s", ft_calloc(0, 0));
-	//printf("\n-------------------------\n");
-	//printf("%s", calloc(1, 0));	
-	//printf("%s", ft_st:wq!rtrim("000helloworld00", "000"));
- 	//int i =123456;	
-	//ft_putnbr_fd(i, 1);
-	//i
-	printf("%s", ft_strtrim(".00#", "0.#/"));
+		size_t i;
+		size_t j;	
+
+		i = ft_strlen(src);
+		while(src[i] && i < dstsize - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+		return(i);
 }
+
+

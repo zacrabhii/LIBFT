@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zrabhi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 13:15:27 by zrabhi            #+#    #+#             */
-/*   Updated: 2021/11/11 13:56:24 by zrabhi           ###   ########.fr       */
+/*   Created: 2021/11/03 09:16:22 by zrabhi            #+#    #+#             */
+/*   Updated: 2021/11/07 16:01:07 by zrabhi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "libft.h"
+char	*ft_strchr(const char *s, int c)
+{
+	int i;
+
+	i = 0;
+	if(c == '\0')
+		return(NULL);
+	while(s[i])
+	{
+		if(s[i] == c)
+			return(((char *)s + i));
+		i++;
+	}
+	return (0);
+}
 int main()
 {
-	//printf("%s", ft_calloc(0, 0));
-	//printf("\n-------------------------\n");
-	//printf("%s", calloc(1, 0));	
-	//printf("%s", ft_st:wq!rtrim("000helloworld00", "000"));
- 	//int i =123456;	
-	//ft_putnbr_fd(i, 1);
-	//i
-	printf("%s", ft_strtrim(".00#", "0.#/"));
+	printf("%s", ft_strchr("hey james ho are you", 'w'));
+	printf(">>>>>%s", strchr("hey james ho are you", 'w'));
 }
+

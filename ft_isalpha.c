@@ -6,18 +6,16 @@
 /*   By: zrabhi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 18:46:09 by zrabhi            #+#    #+#             */
-/*   Updated: 2021/11/02 18:51:51 by zrabhi           ###   ########.fr       */
+/*   Updated: 2021/11/07 18:35:23 by zrabhi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 int		ft_isalpha(int c)
 {
 	if((c>= 'a' || c<= 'z') || (c >= 'A' || c <= 'Z'))
 			return(1);
 	return(0);
 }
-int main()
-{
-	printf("%c", ft_isalpha('48'));
-}
+

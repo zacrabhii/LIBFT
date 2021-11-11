@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zrabhi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 13:15:27 by zrabhi            #+#    #+#             */
-/*   Updated: 2021/11/11 13:56:24 by zrabhi           ###   ########.fr       */
+/*   Created: 2021/11/03 21:35:37 by zrabhi            #+#    #+#             */
+/*   Updated: 2021/11/07 18:34:26 by zrabhi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "libft.h"
+void 	*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t i;
+
+	
+	i = 0;
+	while(((char *)s)[i] && i < n)
+	{
+		if(((char *)s)[i] == c)
+			return(((char *)s + i));
+		i++;
+	}
+	return (0);
+}
 int main()
 {
-	//printf("%s", ft_calloc(0, 0));
-	//printf("\n-------------------------\n");
-	//printf("%s", calloc(1, 0));	
-	//printf("%s", ft_st:wq!rtrim("000helloworld00", "000"));
- 	//int i =123456;	
-	//ft_putnbr_fd(i, 1);
-	//i
-	printf("%s", ft_strtrim(".00#", "0.#/"));
+	printf("%s", ft_memchr("www1335.ma", 53, 10));
+	printf("\n\n%s", memchr("www1335.ma", 53, 10));
 }

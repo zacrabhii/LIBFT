@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zrabhi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 13:15:27 by zrabhi            #+#    #+#             */
-/*   Updated: 2021/11/11 13:56:24 by zrabhi           ###   ########.fr       */
+/*   Created: 2021/11/07 16:08:08 by zrabhi            #+#    #+#             */
+/*   Updated: 2021/11/10 21:16:50 by zrabhi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include "libft.h"
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t i;
+	char *str;
+	size_t n = len;
+
+	i = 0;
+	if(!(str = (char *)malloc(sizeof(char *) * n + 1)))
+			return (NULL);
+	str[n] = '\0';
+	int  check = 1;
+	while(s[i] && i < n)
+		{
+			str[i] = s[start + i - check];
+			i++;
+		}
+	return(str);
+}
 int main()
 {
-	//printf("%s", ft_calloc(0, 0));
-	//printf("\n-------------------------\n");
-	//printf("%s", calloc(1, 0));	
-	//printf("%s", ft_st:wq!rtrim("000helloworld00", "000"));
- 	//int i =123456;	
-	//ft_putnbr_fd(i, 1);
-	//i
-	printf("%s", ft_strtrim(".00#", "0.#/"));
+	printf("%s", ft_substr("hello1 world" , 5, 7));
 }

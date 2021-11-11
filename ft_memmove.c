@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zrabhi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 13:15:27 by zrabhi            #+#    #+#             */
-/*   Updated: 2021/11/11 13:56:24 by zrabhi           ###   ########.fr       */
+/*   Created: 2021/11/03 12:09:29 by zrabhi            #+#    #+#             */
+/*   Updated: 2021/11/11 16:36:38 by zrabhi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "libft.h"
+int		ft_strlen(const char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+		i++;
+	return(i);
+}
+
+void	*ft_memmove(void *dst, const char *src, size_t len)
+{
+	size_t i;
+
+	i = 0;
+	i = ft_strlen(src);
+	while(i < len)
+	{
+		((char *)dst)[i] = src[i];
+		i--;
+	}
+	printf("%s", dst);
+	return ((char *)dst);
+}
+
 int main()
 {
-	//printf("%s", ft_calloc(0, 0));
-	//printf("\n-------------------------\n");
-	//printf("%s", calloc(1, 0));	
-	//printf("%s", ft_st:wq!rtrim("000helloworld00", "000"));
- 	//int i =123456;	
-	//ft_putnbr_fd(i, 1);
-	//i
-	printf("%s", ft_strtrim(".00#", "0.#/"));
+	char dst[6] = "";
+	printf("my fucnction 0.: %s\n", ft_memmove(dst, "hey james", 7));
+	char str[6] = "ll";
+	printf("\n%s", memmove(str, "hey james", 6));
 }

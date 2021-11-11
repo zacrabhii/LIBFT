@@ -1,13 +1,15 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zrabhi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/07 18:32:13 by zrabhi            #+#    #+#             */
+/*   Updated: 2021/11/07 18:33:21 by zrabhi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdlib.h>
-int ft_strlen(char *str)
-{
-    int i;
-    while(str[i])
-        i++;
-    return (i);
-}
-
 char    *ft_strdup(const char *s1)
 {
     char *src;
@@ -25,9 +27,4 @@ char    *ft_strdup(const char *s1)
 		i++;
 	}
 	return (src);
-}
-#include <stdio.h>
-int main()
-{
-	printf("%s", ft_strdup(""));
 }
